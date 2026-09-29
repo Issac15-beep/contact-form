@@ -190,12 +190,20 @@ button:hover {
     width: 100%;
     top: 50px;
     left: 0px;
-    animation: drop-fade 2s ease-in-out forwards;
+}
+
+.success-hidden.show {
+    display: block;
+    animation: drop-fade 1.5s ease-in-out forwards;
+}
+
+.success-hidden.hide {
+    animation: fade-out 1.5s ease-in-out forwards;
 }
 
 @keyframes drop-fade {
     from{
-        display: block;
+        opacity: 0;
         top: 0px;
         left: 0px;
     }
@@ -203,7 +211,17 @@ button:hover {
     to {
         top: 50px;
         left: 0px;
-        display: none;
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
     }
 }
 

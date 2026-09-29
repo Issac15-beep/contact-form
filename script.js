@@ -48,8 +48,18 @@ submitBtn.addEventListener('click', function(e) {
          errors[i].style.display = 'block';
       }
    }else {
-      successHidden.style.display = 'block';
+      successHidden.classList.add('show');
       document.querySelector('#myForm').reset();
+
+      setTimeout(() => {
+         successHidden.classList.remove('show');
+         successHidden.classList.add('hide');
+
+         setTimeout(() => {
+            successHidden.style.display = 'none';
+            successHidden.classList.remove('hide');
+         }, 600); // matches fade-out duration
+      }, 2000); // how long it stays visible before disappearing — adjust as you like
    }
 });
 
